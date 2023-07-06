@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if message %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth=success' %}
+               <div class ="container">
+                    {{ msg }}
+                    <button type="button" class="close" data_dismiss="alert" onclick="this.parentElement.style.display='none'">&times;</button>
+               </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+<header class="hero-section">
+    <h3 class="header-text">Welcome to Book store! test@gmail.com</h3>
+    <main class="container drone_form">
+        <div class="row">
+            <aside class="col-12 col-md-6">
+                <h2>Create a Book!</h2>
+                {% include 'bookform.html' %}
+            </aside>
+        </div>
+    </main>
+</header>
+
+<div class="container">
+    <h3>Here are your profile details</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }} </li>        
+    </ul>
+    <div class="row">
+        {% for book in books %}
+            <div class="card" style="width: 18rem;">
+                <img src="../static/images/cat_reading.jpg" class="card-img-top" alt="cute cat">
+                <div class="card-body">
+                <h5 class="card-title">{{ book.name }}</h5>
+                <p class="card-text">{{ book.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ book.price }}</li>
+                <li class="list-group-item">{{ book.series }}</li>
+                <li class="list-group-item">{{ book.random_joke }}</li>
+                </ul>
+                <div class="card-body">
+                <a href="#" class="card-link">Update Book</a>
+                <a href="#" class="card-link">Delete Book</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock content %}

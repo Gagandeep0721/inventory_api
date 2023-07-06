@@ -18,25 +18,26 @@
                 <img src="../static/images/book-shop-logo.jpg" alt="books_shop Logo">
             </div>
             <div>
-                <ul id="horizontal-list">
-                    <a href="#">
+                <ul id="horizontal-list">          
+                    <a href="{{ url_for('site.home') }}">
                         <li>Books Shop Inventory</li>
                     </a>
-                    <a href="#">
+                    <a href="{{ url_for('site.home') }}">                       
                         <li>Home</li>
                     </a>
-                    <a href="#">
+                    <a href="{{ url_for('site.profile') }}">
                         <li>Profile</li>
                     </a>
-                    <a href="#">
+                    <a href="{{ url_for('auth.logout') }}"> 
                         <li>Log Out</li>
                     </a>
-                    <a href="#">
+                    <a href="{{ url_for('auth.signin') }}">
                         <li>Sign In</li>
                     </a>
-                    <a href="#">
+                    <a href="{{ url_for('auth.signup') }}">
                         <li>Sign Up Free</li>
                     </a>
+                
                 </ul>
             </div>
         </nav>

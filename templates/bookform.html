@@ -1,0 +1,51 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset class="name-field">
+            {{ form.name.label }}
+            {{ form.name(class='form-control', placeholder='Name') }}
+        </fieldset>
+        <fieldset class="description-field">
+            {{ form.description.label }}
+            {{ form.description(class='form-control', placeholder='Description') }}
+        </fieldset>
+        <fieldset class="price-field">
+            {{ form.price.label }}
+            {{ form.price(class='form-control', placeholder='Price') }}
+        </fieldset>
+        <fieldset class="author-field">
+            {{ form.author.label }}
+            {{ form.author(class='form-control', placeholder='author name') }}
+        </fieldset>
+        <fieldset class="genre-field">
+            {{ form.genre.label }}
+            {{ form.genre(class='form-control', placeholder='Genre') }}
+        </fieldset>
+        <fieldset class="publisher-field">
+            {{ form.publisher.label }}
+            {{ form.publisher(class='form-control', placeholder='publisher') }}
+        </fieldset>
+        <fieldset class="edition-field">
+            {{ form.edition.label }}
+            {{ form.edition(class='form-control', placeholder='edition') }}
+        </fieldset>
+        <fieldset class="language-field">
+            {{ form.language.label }}
+            {{ form.language(class='form-control', placeholder='language') }}
+        </fieldset>
+        <fieldset class="cost-field">
+            {{ form.cost_of_prod.label }}
+            {{ form.cost_of_prod(class='form-control', placeholder='Cost of Prod') }}
+        </fieldset>
+        <fieldset class="series-field">
+            {{ form.series.label }}
+            {{ form.series(class='form-control', placeholder='Series') }}
+        </fieldset>
+        <fieldset class="joke-field">
+            {{ form.dad_joke.label }}
+            {{ form.dad_joke(class='form-control', placeholder='Dad Joke') }}
+        </fieldset>
+
+        {{ form.submit_button(class='btn btn-primary btn-block mt-2')}}
+    </div>
+</form>
